@@ -108,8 +108,11 @@ pub struct Decoder<R> {
 
     restart_interval: u16,
 
-    adobe_color_transform: Option<AdobeColorTransform>,
-    color_transform: Option<ColorTransform>,
+    /// The Adobe color transform of the decoded image.
+    pub adobe_color_transform: Option<AdobeColorTransform>,
+
+    /// The color transform of the decoded image.
+    pub color_transform: Option<ColorTransform>,
 
     is_jfif: bool,
     is_mjpeg: bool,
@@ -695,7 +698,8 @@ impl<R: Read> Decoder<R> {
         }
     }
 
-    fn determine_color_transform(&self) -> ColorTransform {
+    /// Determines the color transform of the decoded image.
+    pub fn determine_color_transform(&self) -> ColorTransform {
         if let Some(color_transform) = self.color_transform {
             return color_transform;
         }

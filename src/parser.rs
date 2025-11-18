@@ -102,11 +102,13 @@ pub enum AppData {
 // http://www.sno.phy.queensu.ca/~phil/exiftool/TagNames/JPEG.html#Adobe
 #[allow(clippy::upper_case_acronyms)]
 #[derive(Clone, Copy, Debug, PartialEq)]
+/// The Adobe color transform of the decoded image.
 pub enum AdobeColorTransform {
-    // RGB or CMYK
+    /// Unknown color transform (usually RGB or CMYK)
     Unknown,
+    /// YCbCr color transform
     YCbCr,
-    // YCbCrK
+    /// YCbCrK color transform
     YCCK,
 }
 #[derive(Debug)]

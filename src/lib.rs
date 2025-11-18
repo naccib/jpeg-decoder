@@ -38,7 +38,7 @@ extern crate rayon;
 
 pub use decoder::{ColorTransform, Decoder, ImageInfo, PixelFormat};
 pub use error::{Error, UnsupportedFeature};
-pub use parser::CodingProcess;
+pub use parser::{CodingProcess, AdobeColorTransform};
 
 use std::io;
 
